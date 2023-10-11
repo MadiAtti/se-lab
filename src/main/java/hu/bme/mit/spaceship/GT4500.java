@@ -29,7 +29,7 @@ public class GT4500 implements SpaceShip {
   * 			- To give some cooling time to the torpedo stores, torpedo stores are fired alternating.
   * 			- But if the store next in line is empty, the ship tries to fire the other store.
   * 			- If the fired store reports a failure, the ship does not try to fire the other one.
-  * 	ALL:	tries to fire both of the torpedo stores.
+  * 	ALL:	fire both not empty torpedos
   *
   * @return whether at least one torpedo was fired successfully
   */
@@ -108,6 +108,10 @@ public class GT4500 implements SpaceShip {
           // thus try to fire secondary again
           if (! secondaryTorpedoStore.isEmpty()) {
             firingSuccess = secondaryTorpedoStore.fire(1);
+<<<<<<< HEAD
+=======
+            wasPrimaryFiredLast = true;
+>>>>>>> BranchBD
             
 
             // if both of the stores are empty, nothing can be done, return failure
